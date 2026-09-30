@@ -1,11 +1,13 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 # VIEWS -> retornam algo, são funções, request -> response
 
 # COMEÇANDO A IMPORTAR VIEWS
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('', home), > depois será mexido
+    path('', include('sistema.urls.py')), # Chamando as URLs do app Sistema -> Depois de logado
+    # Preciso chamar as URLs do app Portal -> Home, cadastro, login
 ]
 
 # CAMINHOS DAS URLS - FLUXO DE NAVEGAÇÃO
