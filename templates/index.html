@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -9,10 +10,11 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap">
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href={% static "./style.css" % }>
 </head>
 
 <body>
+  {% block header %}
   <header class="header">
     <div class="container header-container">
       <a class="brand" href="./index.html">
@@ -25,6 +27,7 @@
       </div>
     </div>
   </header>
+  {% endblock header %}
 
   <main class="hero">
     <div class="container hero-container">
