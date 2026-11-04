@@ -3,23 +3,24 @@ from django.shortcuts import render
 from sistema.models import Paciente # importando o objeto Paciente
 
 # VIEWS -> retornam algo, são funções (request -> response)
-def index(request):
+def index_paciente(request):
     return render(
         request, 
-        'global/base.html',
+        # 'global/base.html',
+        'index.html',
         ) #GLOBAL: Uma página inteira
 
 # View responsável por listar todos os pacientes
-def listar_pacientes(request):
-    pacientes = Paciente.objects.all() # lista de objetos [obj1, obj2]
+# def listar_pacientes(request):
+#     pacientes = Paciente.objects.all() # lista de objetos [obj1, obj2]
 
-    context = { # dicionário
-        'pacientes': pacientes,
-    }
+    # context = { # dicionário
+    #     'pacientes': pacientes,
+    # }
 
-    return render(
-        request, 
-        'paciente/listar.html',
-        context,
-    )
+    # return render(
+    #     request, 
+    #     'paciente/listar.html',
+    #     context,
+    # )
 

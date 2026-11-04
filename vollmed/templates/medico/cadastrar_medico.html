@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Agendamento de consulta · Consulta.me</title>
-  <link rel="icon" href="../assets/favicon.png" type="image/png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap">
-  <link rel="stylesheet" href="../style.css">
-</head>
+<head>{% include "global/_head.html" %}</head>
 
 <body>
   <header class="header">
@@ -21,8 +12,8 @@
       </a>
 
       <nav class="nav" aria-label="Principal">
-        <a href="../medico/listagem_medico.html" class="nav-link">Médicos</a>
-        <a href="./listagem_consulta.html" class="nav-link" aria-current="page">Consultas</a>
+        <a href="./listagem_medico.html" class="nav-link" aria-current="page">Médicos</a>
+        <a href="../consulta/listagem_consulta.html" class="nav-link">Consultas</a>
       </nav>
 
       <details class="user-menu">
@@ -41,8 +32,8 @@
     <section class="card form-card">
       <div class="page-header">
         <div>
-          <h1 class="page-title">Agendamento de consulta</h1>
-          <p class="page-subtitle">Escolha a especialidade, o médico e o melhor horário.</p>
+          <h1 class="page-title">Cadastro de médico</h1>
+          <p class="page-subtitle">Preencha os dados abaixo para cadastrar um novo médico.</p>
         </div>
       </div>
 
@@ -50,6 +41,26 @@
         <input type="hidden" name="id">
 
         <div class="form-grid">
+          <div class="form-group form-group-full">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" placeholder="Nome completo" autocomplete="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail</label>
+            <input id="email" name="email" type="email" placeholder="medico@email.com" autocomplete="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telefone">Telefone</label>
+            <input id="telefone" name="telefone" type="tel" placeholder="(00) 00000-0000" autocomplete="tel" required>
+          </div>
+
+          <div class="form-group">
+            <label for="crm">CRM</label>
+            <input id="crm" name="crm" inputmode="numeric" placeholder="000000" required>
+          </div>
+
           <div class="form-group">
             <label for="especialidade">Especialidade</label>
             <select id="especialidade" name="especialidade" required>
@@ -57,46 +68,24 @@
               <option>ORTOPEDIA</option>
             </select>
           </div>
-
-          <div class="form-group">
-            <label for="idMedico">Médico</label>
-            <select id="idMedico" name="idMedico" required>
-              <option value="" disabled selected>Selecione um médico</option>
-            </select>
-          </div>
-
-          <div class="form-group">
-            <label for="cpf">CPF do paciente</label>
-            <input id="cpf" name="cpf" inputmode="numeric" placeholder="000.000.000-00" required>
-          </div>
-
-          <div class="form-group">
-            <label for="data">Data e hora</label>
-            <input id="data" name="data" type="datetime-local" required>
-          </div>
         </div>
 
         <div class="form-actions">
-          <a href="./listagem_consulta.html" class="btn btn-secondary">
+          <a href="./listagem_medico.html" class="btn btn-secondary">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
             Voltar
           </a>
 
           <button type="submit" class="btn btn-primary">
             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>
-            Agendar
+            Cadastrar
           </button>
         </div>
       </form>
     </section>
   </main>
 
-  <footer class="footer">
-    <div class="container footer-container">
-      <img src="../assets/logo-aluno.svg" alt="Logo Aluno" width="203" height="64">
-      <p>2025 © Desenvolvido por Aluno | Projeto fictício sem fins comerciais.</p>
-    </div>
-  </footer>
+  <footer class="footer">{% include "global/_footer.html" %}</footer>
 </body>
 
 </html>
