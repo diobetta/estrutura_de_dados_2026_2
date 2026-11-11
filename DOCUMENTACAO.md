@@ -7,20 +7,16 @@
 5. ``python manage.py migrate`` ->  Realiza as migrações(ativa) do projeto.
  O resto está no google keep
 
- # Atividade
- 1. Criar um model para o médico com as informações: 
- - Nome
- - Sobrenome
- - E-mail
- - Data da Criação
- - Telefone
- - CRM (6 digitos), será string
- - Especialidade 
- - Mensagem
- - Ativo = True
+# TAGS DO DJANGO HTML
+> {% load static %} -> Habilita o static no arquivo. Cada template que utiliza {% static %} precisa ser carregado.
+> {% block title %} -> Insere o título da aba. As páginas filhas trocam.
+> {% block header %} -> O header público (logo + entrar). `O base_logago.html` troca por inteiro
+> {% block header_actions %} -> Só o botão "entrar". O `login.html` esvazia o bloco. Quer dizer que no unico header disponível ele pode ter ações diferentes, dependendo do usuário (paciente x médico)
+> {% include ... %} -> Insere as mensagens e/ou blocos de código.
+> {% block content %} -> O miolo da página, cada filha vai ter seu próprio <main>
 
- 2. Na Exibição do Portal administrativo, deverá ser apresentado:
- - Id, Nome, email, telefone, especialidade, crm, ativo 
-
-# Atividade 
-1. Criar um model para a consulta e linkar com o model médico (esta na apostila)
+## TAGS DE ROTA
+> {% url 'sistema:medico-list' %} -> Fica nos templates e se refere a uma lista de médicos que está no APP Sistema. 
+> {% url 'sistema:medico-update' medico.pk %} -> Utilização no template com parâmetro, para atualização (update) do médico.
+> {% url url_voltar %} -> url_voltar é o nome de uma variável que guarda uma lógica de retorno a página anterior.
+> redirect('sistema:medico-list') -> Fica numa view e informa que quando uma ação for realizada, o usuário será redirecionado.
