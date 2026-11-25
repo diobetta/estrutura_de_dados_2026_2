@@ -1,6 +1,9 @@
 from django.db import models # ORM do Django para declarar modelos no banco de dados (NÃO É PYTHON)
 from django.utils import timezone # Útil para gerar data/hora atual do projeto
 
+from sistema.models.medico_models import Medico
+from sistema.models.paciente_models import Paciente
+
 class Consulta(models.Model):
 
     # ForeignKey cria um relacionamento "muitos para um" (N:1) = Chave estrangeira
