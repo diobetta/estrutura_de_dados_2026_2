@@ -20,3 +20,9 @@
 > {% url 'sistema:medico-update' medico.pk %} -> Utilização no template com parâmetro, para atualização (update) do médico.
 > {% url url_voltar %} -> url_voltar é o nome de uma variável que guarda uma lógica de retorno a página anterior.
 > redirect('sistema:medico-list') -> Fica numa view e informa que quando uma ação for realizada, o usuário será redirecionado.
+
+# 25/11/2026
+- /medico -> 200 -> página inicial do médico
+- /medico/novo -> 200 -> cadastro do médico, ou seja, formulário
+- /medico/listagem -> 200 -> listagem dos médicos
+

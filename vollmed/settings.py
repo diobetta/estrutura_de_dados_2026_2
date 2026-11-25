@@ -44,7 +44,7 @@ ROOT_URLCONF = 'vollmed.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['templates'], # inclusão dos htmls
+        'DIRS': [BASE_DIR / 'vollmed', 'templates'], # Obrigatório no django para chamar os templates, boa prática
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -106,6 +106,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
 STATIC_URL = 'static/' # irá ficar guardado o css / imagem
+STATICFILES_DIRS = [BASE_DIR / 'vollmed' / 'static']
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
